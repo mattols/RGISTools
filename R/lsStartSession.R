@@ -14,7 +14,7 @@ startUSGSsession<-function(username,
   html<-readLines(req)
   html<-paste(html,collapse = "\n ")
   html<-read_html(html)
-  csrf<-html %>% html_nodes(xpath = '//*[@name="csrf_token"]') %>% xml_attr("value")
+  csrf<-html %>% html_nodes(xpath = '//*[@name="csrf"]') %>% xml_attr("value")
   if(grepl("ncforminfo",html)){
     nc<-html %>% html_nodes(xpath = '//*[@name="__ncforminfo"]') %>% xml_attr("value")
     handle_setform(c.handle,
