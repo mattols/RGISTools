@@ -20,7 +20,7 @@ startUSGSsession<-function(username,
     handle_setform(c.handle,
                    'username' = username,
                    'password' = password,
-                   "csrf_token"=csrf,
+                   "csrf"=csrf,
                    "__ncforminfo"=nc
     )
   }else{
